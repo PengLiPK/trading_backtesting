@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Trading backtesting : Backtesting method for algorithmic trading">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Trading backtesting</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/PengLiPK/trading_backtesting">View on GitHub</a>
+
+          <h1 id="project_title">Trading backtesting</h1>
+          <h2 id="project_tagline">Backtesting method for algorithmic trading</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/PengLiPK/trading_backtesting/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/PengLiPK/trading_backtesting/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="backtesting-for-algorithmic-trading" class="anchor" href="#backtesting-for-algorithmic-trading" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backtesting for algorithmic trading</h3>
+
+<p>Backtesting is a method of applying trading strategy to historical financial data and evaluating the trading strategy. This program contains financial data downloading, cleansing and storing, trading algorithm building and algorithm deploying.</p>
+
+<h4>
+<a id="data-downloading" class="anchor" href="#data-downloading" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data downloading</h4>
+
+<p>It is very easy to use Yahoo API or <a href="https://www.quandl.com/">Quandl</a> to download financial data.</p>
+
+<ul>
+<li><p>Yahoo API is like:<br>
+<a href="http://ichart.finance.yahoo.com/table.csv?s=GOOG&amp;a=2014&amp;b=1&amp;c=23&amp;d=2015&amp;e=2&amp;f=10">http://ichart.finance.yahoo.com/table.csv?s=GOOG&amp;a=2014&amp;b=1&amp;c=23&amp;d=2015&amp;e=2&amp;f=10</a></p></li>
+<li><p>Quandl has Python <a href="https://www.quandl.com/help/python">API</a>, you can use the following to dowload data in Python:   </p></li>
+</ul>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> Quandl   
+mydata <span class="pl-k">=</span> Quandl.get(<span class="pl-s"><span class="pl-pds">"</span>GOOG/NYSE_SPY<span class="pl-pds">"</span></span>)   </pre></div>
+
+<p>The format of <code>mydata</code> is Pandas data format.  </p>
+
+<h4>
+<a id="data-cleansing-and-storing" class="anchor" href="#data-cleansing-and-storing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data cleansing and storing</h4>
+
+<p><a href="http://pandas.pydata.org/">Pandas</a> is a great tool for data analysis in Python. Pandas is used for data cleansing, processing, and sometimes plotting.<br>
+Here is a picture of daily closed price of Google plotted by Pandas:<br>
+<img src="./images/google_cp.png" alt="close_price"></p>
+
+<p>Data can be stored on local machines by SQLAlchemy (<a href="http://www.sqlalchemy.org/">http://www.sqlalchemy.org/</a>) or other SQLs such as <a href="https://dev.mysql.com/doc/refman/5.7/en/apis-python.html">MySQL Python API</a>. SQLAlchemy supports SQLite, Postgresql, MySQL, Oracle, MS-SQL and others.    </p>
+
+<h4>
+<a id="trading-algorithm-building" class="anchor" href="#trading-algorithm-building" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trading algorithm building</h4>
+
+<p>Both analytic model or machine learning method can be used as trading algorithm. The only difference is: ananlytic model can be tested on the entire data; machine learning method can be only tested on the testing data set (The data would be divided as training and tesing set before applying machine learning). The most popular tool of machine learning in Python is <a href="http://scikit-learn.org/stable/">Scikit-learn</a>.</p>
+
+<h4>
+<a id="trading-algorithm-deploying" class="anchor" href="#trading-algorithm-deploying" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trading algorithm deploying</h4>
+
+<p>After having the trading algorithm, you need to build you portfolio according to the trading algorithm. This also includes creating positions, holdings and a set of trading orders.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Trading backtesting maintained by <a href="https://github.com/PengLiPK">PengLiPK</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
